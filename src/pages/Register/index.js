@@ -35,7 +35,6 @@ const Register = (props) => {
                             onChange={(e) => setUserType(e.target.value)}
                         >
                             <MenuItem value={"User"}>Student</MenuItem>
-                            {/* <MenuItem value={"Manager"}>Manager</MenuItem> */}
                             <MenuItem value={"Organisation"}>Admin</MenuItem>
                         </Select>
                     </FormControl>
