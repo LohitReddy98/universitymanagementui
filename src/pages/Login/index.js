@@ -31,14 +31,12 @@ const Login = (props) => {
             dispatch({ type: "LOGIN", payload: { email, userType: userType.toLocaleLowerCase() } })
         }
         catch (e) {
-            console.log(e)
             setError((error) => {
                 return { ...error, login: true }
             })
         }
     }
     useEffect(() => {
-        console.log("hello", auth)
         switch (auth.userType) {
             case ("student"):
                 history.push('/stuhomepage');
@@ -53,7 +51,7 @@ const Login = (props) => {
                 break;
         }
 
-    }, auth.userType)
+    }, [auth.userType])
 
     return (
 
