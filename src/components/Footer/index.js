@@ -9,7 +9,7 @@ const Footer = () => {
 
                 <div className="footer-left">
 
-                    <h3>Pass<span>Management </span></h3>
+                    <h3>Univ<span>Management </span></h3>
 
                     <p className="footer-company-name">Company Name © 2022</p>
                 </div>
@@ -18,17 +18,17 @@ const Footer = () => {
 
                     <div>
                         <i className="fa fa-map-marker"></i>
-                        <p><span>728 kellogg st</span> San marcos, California</p>
+                        <p><span>xyz st</span> texas</p>
                     </div>
 
                     <div>
                         <i className="fa fa-phone"></i>
-                        <p>+1 9546698347</p>
+                        <p>+11 1 1 11111</p>
                     </div>
 
                     <div>
                         <i className="fa fa-envelope"></i>
-                        <p><a href="mailto:lohitreddycht@gmail.com">lohitreddycht@gmail.com</a></p>
+                        <p><a href="mailto:ajay@gmail.com">ajay@gmail.com</a></p>
                     </div>
 
                 </div>
