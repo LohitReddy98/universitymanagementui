@@ -12,12 +12,19 @@ const AddNewJob = () => {
     const [title, setTitle] = useState();
     const [description, setDes] = useState();
     const onClick = async () => {
-        const res = await axios.put(URL + `job`, {
-            description,
-            openings,
-            title,
-            cmpId: hrInfo.cmpId,
-        })
+        try {
+            const res = await axios.put(URL + `job`, {
+                description,
+                openings,
+                title,
+                cmpId: hrInfo.cmpId,
+            })
+            alert("Successfully added")
+        }
+        catch (e) {
+            alert("Something went wrong please try again ")
+        }
+
     }
 
 
