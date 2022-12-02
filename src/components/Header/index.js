@@ -16,12 +16,12 @@ const Header = () => {
         <>
             <div className="header">
                 <h3>Univ<span>Management </span></h3>
-                {auth.email && < Button variant="contained" size="small" onClick={() => {
+                {auth.email && < Button variant="contained" size="small" style={{ maxWidth: "200px" }} onClick={() => {
                     dispatch({ type: "LOGOUT" });
                     history.push('/')
                 }}>Log out   </Button>
                 }
-                {!auth.email && < Button variant="contained" size="small" onClick={() => {
+                {!auth.email && < Button variant="contained" size="small" style={{ maxWidth: "200px" }} onClick={() => {
                     history.push('/')
                 }}
                 >Login   </Button>
