@@ -7,6 +7,7 @@ import Register from './pages/Register';
 import AdminHome from './pages/Admin/HomePage';
 import HrHome from './pages/HR/HomePage';
 import StudentHome from './pages/Student/HomePage';
+import Applicants from './pages/HR/Applicants/index.js';
 
 
 
@@ -45,6 +46,11 @@ const App = () => {
             exact
             path="/hrhomepage"
             component={HrHome}
+          />
+          <Route
+            exact
+            path="/applicants"
+            component={Applicants}
           />
         </Switch>
       </Shell>

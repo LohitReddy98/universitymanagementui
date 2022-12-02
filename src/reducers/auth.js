@@ -5,6 +5,9 @@ export default (state = {}, action) => {
                 ...state,
                 email: action.payload.email,
                 userType: action.payload.userType,
+                stuId: action.payload.stuId,
+                cmpId: action.payload.cmpId
+
             }
         case "LOGOUT":
             return {

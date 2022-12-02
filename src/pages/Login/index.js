@@ -24,11 +24,20 @@ const Login = (props) => {
             setError((e) => { return { ...e, password: true } })
         }
         try {
-            await axios.post(URL + userType.toLocaleLowerCase(), {
+            const res = await axios.post(URL + userType.toLocaleLowerCase(), {
                 email: email,
                 pass: password
             })
-            dispatch({ type: "LOGIN", payload: { email, userType: userType.toLocaleLowerCase() } })
+            dispatch({
+                type: "LOGIN", payload: {
+                    email,
+                    userType: userType.toLocaleLowerCase(),
+                    adminId: res.data?.adminId,
+                    stuId: res.data?.stuId,
+                    hrId: res.data?.hrId,
+                    cmpId: res.data?.cmpId
+                }
+            })
         }
         catch (e) {
             setError((error) => {
