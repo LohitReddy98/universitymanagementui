@@ -1,1 +1,1 @@
-export const URL = "https://sunny-web-369306.uc.r.appspot.com/"
+export const URL = "http://34.117.254.240/"
