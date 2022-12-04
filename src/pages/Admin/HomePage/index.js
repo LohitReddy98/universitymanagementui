@@ -2,6 +2,7 @@ import { Box, Tab, Tabs } from "@mui/material";
 import React, { useState } from "react";
 import AddCompany from "../AddCompany";
 import ViewCompanies from "../ViewCompanies";
+import ViewHr from "../ViewHr";
 import ViewStudents from "../ViewStudents";
 
 
@@ -18,6 +19,8 @@ const AdminHome = (props) => {
                         <Tab label="Add Company" />
                         <Tab label="View Companies" />
                         <Tab label="View Students" />
+                        <Tab label="View HR" />
+
                     </Tabs>
                 </Box>
             </div>
@@ -25,6 +28,8 @@ const AdminHome = (props) => {
             {value == 0 && <AddCompany />}
             {value == 1 && <ViewCompanies />}
             {value == 2 && <ViewStudents />}
+            {value == 3 && <ViewHr />}
+
 
         </div>
     );

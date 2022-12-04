@@ -3,30 +3,27 @@ import axios from "axios";
 import { URL } from "../../../constants";
 import { DataGrid } from "@mui/x-data-grid";
 import { Button } from "@mui/material";
-const ViewStudents = (props) => {
-    const [stus, setStus] = useState([])
+const ViewHr = (props) => {
+    const [hrs, setHr] = useState([])
     const columns = [
-        { field: 'id', headerName: 'ID', width: 70 },
-        { field: 'name', headerName: 'Student Name', width: 150 },
-        { field: 'phone', headerName: 'Phone', width: 150 },
-        { field: 'skills', headerName: "Skills", width: 150 },
-        { field: 'about', headerName: 'About', width: 150 },
-        { field: 'address', headerName: 'Address', width: 150 },
+        { field: 'id', headerName: 'Hr Id', width: 70 },
+        { field: 'hrName', headerName: 'hr Name', width: 150 },
+        { field: 'email', headerName: 'Phone', width: 150 },
+        { field: 'companyName', headerName: "Company name", width: 150 },
         {
             field: 'delete', headerName: '', width: 150,
             disableClickEventBubbling: true,
             sortable: false,
             renderCell: (params) => {
-                const onApply = async (stuId) => {
+                const onApply = async (hrId) => {
                     try {
-                        const res = await axios.delete(URL + `student/${stuId}`)
-                        alert("delete Success")
+                        await axios.delete(URL + `hr/${hrId}`)
+                        alert("Delete success")
                         fetchData()
                     }
                     catch {
-                        alert("delete faile")
+                        alert("Delete failed")
                     }
-
 
                 }
                 return (
@@ -38,8 +35,8 @@ const ViewStudents = (props) => {
 
     ];
     const fetchData = async () => {
-        const res = await axios.get(URL + `student`)
-        setStus(res.data.map((x) => { return { id: x.stuId, ...x } }))
+        const res = await axios.get(URL + `hr`)
+        setHr(res.data.map((x) => { return { id: x.hrId, ...x } }))
     }
 
     useEffect(() => {
@@ -47,7 +44,7 @@ const ViewStudents = (props) => {
     }, [])
     return (<>
         <DataGrid
-            rows={stus}
+            rows={hrs}
             columns={columns}
             pageSize={5}
             rowsPerPageOptions={[5]}
@@ -56,4 +53,4 @@ const ViewStudents = (props) => {
     </>)
 }
 
-export default ViewStudents;
+export default ViewHr;
